@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/blue"
+    tools:context=".StudentHomePage">
+
+    <Button
+        android:id="@+id/btnViewAnnouncements"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/view_announcements_events"
+        android:background="@color/yellow"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnCheckQualifications"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/check_qualifications"
+        android:background="@color/orange"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnPostComplaint"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/post_complaint"
+        android:background="@color/purple"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnRSVP"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/rsvp_for_event"
+        android:background="@color/green"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnCommentRateEvent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/comment_rate_event"
+        android:background="@color/red"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnLogOut"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/log_out"
+        android:background="@color/yellow"
+        android:layout_marginBottom="8dp"/>
+
+</LinearLayout>

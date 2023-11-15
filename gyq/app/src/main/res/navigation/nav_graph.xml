@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_student_login_page">
+
+    <!-- Student Login Page Fragment -->
+    <fragment
+        android:id="@+id/fragment_student_login_page"
+        android:name="com.example.cscb07_2023_fall.StudentLoginPage"
+        android:label="fragment_student_login_page"
+        tools:layout="@layout/fragment_student_login_page">
+        <!-- Action to navigate from Login to Home Page -->
+        <action
+            android:id="@+id/action_studentLoginPage_to_studentHomePage"
+            app:destination="@id/fragment_student_home_page" />
+        <!-- Add more actions here for other destinations from the login page -->
+    </fragment>
+
+    <!-- Student Home Page Fragment -->
+    <fragment
+        android:id="@+id/fragment_student_home_page"
+        android:name="com.example.cscb07_2023_fall.StudentHomePage"
+        android:label="fragment_student_home_page"
+        tools:layout="@layout/fragment_student_home_page">
+        <!-- Define actions here for navigation from the home page to other destinations -->
+    </fragment>
+
+    <!-- Other fragments and actions can be added below -->
+
+</navigation>

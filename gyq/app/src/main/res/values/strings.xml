@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">CSCB07_2023_fall</string>
+    <string name="view_announcements_events">View Announcement Event</string>
+    <string name="check_qualifications">Check Qualification</string>
+    <string name="post_complaint">Post Complaint</string>
+    <string name="rsvp_for_event">RSVP for an Event</string>
+    <string name="comment_rate_event">Comment/Rate an Event</string>
+    <string name="log_out">Log Out</string>
+    <string name="id_hint">ID</string>
+    <string name="password_hint">Password</string>
+    <string name="login">Login</string>
+    <string name="new_account">New Account</string>
 </resources>
