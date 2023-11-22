@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="ExtraText">
+
+    <RelativeLayout
+        android:id="@+id/login_background"
+        android:layout_width="407dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/studentCheckQualiQ2"
+        android:layout_width="199dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="336dp"
+        android:drawablePadding="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Question2\nyou are an UTSC student"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/q2False"
+        android:layout_width="72dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="388dp"
+        android:text="False"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toEndOf="@+id/q2True"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/q2True"
+        android:layout_width="72dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="388dp"
+        android:text="True"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/q1False"
+        android:layout_width="72dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="264dp"
+        android:text="False"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toEndOf="@+id/q1True"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/q1True"
+        android:layout_width="72dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="264dp"
+        android:text="True"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/studentCheckQualiQ1"
+        android:layout_width="133dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="212dp"
+        android:drawablePadding="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Question1\nyou are a human"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/studentCheckQualiQ3"
+        android:layout_width="199dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="460dp"
+        android:drawablePadding="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Question3\nyou are undergraduate"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/q3False"
+        android:layout_width="72dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="508dp"
+        android:text="False"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toEndOf="@+id/q3True"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/q3True"
+        android:layout_width="72dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="508dp"
+        android:text="True"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnStudentCheckQualiCheck"
+        android:layout_width="180dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="112dp"
+        android:backgroundTint="#FF9800"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="onClick"
+        android:text="Check your qualification"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/studentCheckQuali"
+        android:layout_width="201dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="164dp"
+        android:drawablePadding="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Check if you are qualified:"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/questionOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </RadioGroup>
+
+
+    <RadioGroup
+        android:id="@+id/questionTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </RadioGroup>
+
+
+    <RadioGroup
+        android:id="@+id/questionThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnStudentCheckQualiBack"
+        android:layout_width="180dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="#FFEB3B"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="onClick"
+        android:text="back"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
