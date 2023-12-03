@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:id="@+id/login_background"
+        android:layout_width="407dp"
+        android:layout_height="145dp"
+        android:background="@drawable/pic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/detailedEventTitle"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/adminViewEventTitle"
+        app:layout_constraintTop_toBottomOf="@+id/adminViewEventsBanner"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <TextView
+        android:id="@+id/adminViewEventOccupancy"
+        android:layout_width="100dp"
+        android:layout_height="38dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center_vertical"
+        android:text="Capacity:"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailedEventContent"
+        app:layout_constraintVertical_bias="0.032" />
+
+    <TextView
+        android:id="@+id/detailedEventOccupancy"
+        android:layout_width="180dp"
+        android:layout_height="38dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/adminViewEventOccupancy"
+        app:layout_constraintTop_toBottomOf="@+id/detailedEventContent"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <TextView
+        android:id="@+id/adminViewEventAvgRate"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center_vertical"
+        android:text="Rate Average:"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminViewEventCount"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/detailedEventCount"
+        android:layout_width="180dp"
+        android:layout_height="36dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/adminViewEventCount"
+        app:layout_constraintTop_toBottomOf="@+id/detailedEventOccupancy"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/detailedEventContent"
+        android:layout_width="200dp"
+        android:layout_height="105dp"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/adminViewEventContent"
+        app:layout_constraintTop_toBottomOf="@+id/detailedEventTitle"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <TextView
+        android:id="@+id/detailedEventAvgRate"
+        android:layout_width="180dp"
+        android:layout_height="36dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/adminViewEventCount"
+        app:layout_constraintTop_toBottomOf="@+id/detailedEventCount"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/adminViewEventCount"
+        android:layout_width="100dp"
+        android:layout_height="38dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center_vertical"
+        android:text="Rate Count:"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminViewEventOccupancy"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ListView
+        android:id="@+id/studentCommentForEvent"
+        android:layout_width="320dp"
+        android:layout_height="100dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdminViewDetailedEventBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminViewEventComments" />
+
+    <TextView
+        android:id="@+id/adminViewEventComments"
+        android:layout_width="200dp"
+        android:layout_height="38dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center_vertical"
+        android:text="Comments from student:"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminViewEventAvgRate"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <TextView
+        android:id="@+id/adminViewEventContent"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center_vertical"
+        android:text="Content:"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminViewEventTitle"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <TextView
+        android:id="@+id/adminViewEventTitle"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center_vertical"
+        android:text="Title:"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminViewEventsBanner"
+        app:layout_constraintVertical_bias="0.029" />
+
+    <Button
+        android:id="@+id/btnAdminViewDetailedEventBack"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#97CFCFCF"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="onClick"
+        android:text="Back"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <TextView
+        android:id="@+id/adminViewEventsBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event Details"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_background"
+        app:layout_constraintVertical_bias="0.01999998" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
