@@ -54,16 +54,17 @@ public class StudentSignupRSVPEvent extends AppCompatActivity {
                 } else {
                     selectedEvent.participants++;
                     Log.d("btnStudentRSVPEvent", (selectedEventTitle != null) ? "selected event is " + selectedEventTitle : "selected event title is null!!!!!!!!!!!!!");
-                    if (student.registeredEvents == null)
+                    if (student.registeredEvents == null||student.registeredEvents.isEmpty())
                         student.registeredEvents = new ArrayList<String>();
                     student.registeredEvents.add(selectedEventTitle);
 
                     model.rsvpEvent(selectedEvent, studentID, student,
-                            (Boolean eventSucceed) -> {Toast.makeText(StudentSignupRSVPEvent.this, eventSucceed ? "successfully update EVENT" : "Failed to update EVENT", Toast.LENGTH_LONG).show();},
-                            (Boolean studentSucceed) -> {Toast.makeText(StudentSignupRSVPEvent.this, studentSucceed ? "successfully update STUDENT" : "Failed to update STUDENT", Toast.LENGTH_LONG).show();});
+                            (Boolean eventSucceed) -> {},
+                            (Boolean studentSucceed) -> {Toast.makeText(StudentSignupRSVPEvent.this,
+                                    studentSucceed ? "Event successfully registered" : "Failed to register for the event", Toast.LENGTH_SHORT).show();});
                 }
-                Intent intent = new Intent(StudentSignupRSVPEvent.this, StudentViewRSVPEvents.class);
-                intent.putExtra("studentID", studentID);
+                Intent intent = new Intent(StudentSignupRSVPEvent.this, StudentOperations.class);
+                intent.putExtra("userID", studentID);
                 startActivity(intent);
             }
         });
@@ -89,7 +90,7 @@ public class StudentSignupRSVPEvent extends AppCompatActivity {
 
         model.getSingleEvent(selectedEventTitle, (Event event) -> {
 
-            Log.d("signupEvent: setEventTextView", (event != null) ? "selected event: " + event.name : "没拿到 selected event");
+            Log.d("signupEvent: setEventTextView", (event != null) ? "selected event: " + event.name : "there is no selected event");
 
             rsvpEventNameShow.setText(event.name);
             rsvpEventContentShow.setText(event.content);

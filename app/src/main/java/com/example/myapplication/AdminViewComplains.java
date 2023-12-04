@@ -42,14 +42,21 @@ public class AdminViewComplains extends AppCompatActivity {
 
         Model model = Model.getInstance();
         model.getComplaints((HashMap<String, PublicMessage> complainsMap) -> {
-
-            String[] complainsArrayList = new String[complainsMap.keySet().size()];
+            String[] complainsArrayList;
+            if(complainsMap.keySet().size() == 0){
+                String s = "There isn't any complaints posted.";
+                complainsArrayList = new String[1];
+                complainsArrayList[0] = s;
+            }
+            else{
+                complainsArrayList = new String[complainsMap.keySet().size()];
 //            complainsMap.keySet().toArray(complainsTitle);
-            int index = 0;
-            for (Map.Entry<String, PublicMessage> entry : complainsMap.entrySet()) {
-                String title = entry.getKey();
-                PublicMessage complain = entry.getValue();
-                complainsArrayList[index++] = title + ":\n" + complain.content;
+                int index = 0;
+                for (Map.Entry<String, PublicMessage> entry : complainsMap.entrySet()) {
+                    String title = entry.getKey();
+                    PublicMessage complain = entry.getValue();
+                    complainsArrayList[index++] = title + ":\n" + complain.content;
+                }
             }
 
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, complainsArrayList);

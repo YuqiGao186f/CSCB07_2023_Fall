@@ -15,6 +15,8 @@ public class Event implements Serializable {
     public double avgRate;//scaled from 1-10, 1 for the worst, 5 for normal, 10 for the best
     public List<String> comments;//List of comments by students
 
+
+
     public Event(){
     }
 
@@ -28,6 +30,7 @@ public class Event implements Serializable {
         this.count = 0;//no evaluation on created
         this.avgRate = 5.0;//denote Value
         this.comments = new ArrayList<String>();
+
     }
 
     public Event(String title, String content, int occupancy, int participants, int count,
@@ -41,5 +44,7 @@ public class Event implements Serializable {
         this.count = count;
         this.avgRate = avgRate;
         this.comments = comments;
+
     }
+
 }

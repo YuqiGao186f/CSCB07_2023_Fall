@@ -66,7 +66,7 @@ public class AdminGenerateEvents extends AppCompatActivity {
                     Event newEvent = new Event(eventTitle,content,Integer.parseInt(occupancy));
                     model.saveEvent(newEvent, (Boolean succeed) ->{
                         Toast.makeText(AdminGenerateEvents.this,
-                                succeed ? "event " + eventTitle + " created" : "Failed to save event",
+                                succeed ? "Event: " + eventTitle + " created" : "Failed to save event",
                                 Toast.LENGTH_SHORT).show();
                     });
 

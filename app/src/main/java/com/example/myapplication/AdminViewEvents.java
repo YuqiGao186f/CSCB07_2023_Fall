@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AdminViewEvents extends AppCompatActivity {
     private ListView adminEventList;
@@ -40,8 +41,19 @@ public class AdminViewEvents extends AppCompatActivity {
 
         Model model = Model.getInstance();
         model.getEvents((HashMap<String, Event> eventsMap) -> {
-            String[] eventsTitle = new String[eventsMap.keySet().size()];
-            eventsMap.keySet().toArray(eventsTitle);
+            String[] eventsTitle;
+            if(eventsMap.keySet().size() == 0){
+                String s = "There isn't any events posted.";
+                eventsTitle = new String[1];
+                eventsTitle[0] = s;
+            }
+            else{
+                eventsTitle = new String[eventsMap.keySet().size()];
+                eventsMap.keySet().toArray(eventsTitle);
+            }
+
+//            String[] eventsTitle = new String[eventsMap.keySet().size()];
+//            eventsMap.keySet().toArray(eventsTitle);
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, eventsTitle);
 
             adminEventList.setAdapter(adapter);
@@ -50,10 +62,13 @@ public class AdminViewEvents extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     String selectedItem = (String) parent.getItemAtPosition(position);
-                    Intent intent = new Intent(AdminViewEvents.this, AdminViewEventDetail.class);
-                    intent.putExtra("adminID", adminID);
-                    intent.putExtra("selectedEvent",selectedItem);
-                    startActivity(intent);
+
+                    if(!(selectedItem.equals("There isn't any events posted."))) {
+                        Intent intent = new Intent(AdminViewEvents.this, AdminViewEventDetail.class);
+                        intent.putExtra("adminID", adminID);
+                        intent.putExtra("selectedEvent",selectedItem);
+                        startActivity(intent);
+                    }
                 }
             });
 

@@ -19,8 +19,10 @@ public class AdminGenerateAnnouncement extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_generate_announcement);
+        //initialize the page and link to the corresponding xml layout file
 
         adminID = getIntent().getStringExtra("adminID");
+        //To let the system knows who is operating needs to pass ID between each page, until log out
 
         Model model = Model.getInstance();
         model.getAdmin(adminID, (Admin admin) -> {

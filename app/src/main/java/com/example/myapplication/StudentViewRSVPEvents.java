@@ -48,11 +48,13 @@ public class StudentViewRSVPEvents extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = (String) parent.getItemAtPosition(position);
-                Intent intent = new Intent(StudentViewRSVPEvents.this,
+                if(!(selectedItem.equals("There isn't any events posted.")) && !(selectedItem.equals("You have registered all events."))) {
+                    Intent intent = new Intent(StudentViewRSVPEvents.this,
                         StudentSignupRSVPEvent.class);
-                intent.putExtra("studentID", studentID);
-                intent.putExtra("selectedEvent",selectedItem);
-                startActivity(intent);
+                    intent.putExtra("studentID", studentID);
+                    intent.putExtra("selectedEvent",selectedItem);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -78,18 +80,22 @@ public class StudentViewRSVPEvents extends AppCompatActivity {
 
         model.getEvents((HashMap<String, Event> eventsMap) -> {
 
-            Log.d("viewRSVP: setEventsList", (eventsMap.isEmpty()) ? "eventsMap.isEmpty()" : "Events are: " + eventsMap.keySet());
+            List<String> eventsTitle;
+            this.displayedEvents = new ArrayList<>();
 
-            List<String> eventsTitle = new ArrayList<>(eventsMap.keySet());
-
-            if (this.student.registeredEvents == null) {
+            if (eventsMap.isEmpty())
+                this.displayedEvents.add("There isn't any events posted.");
+            else if (this.student.registeredEvents == null||this.student.registeredEvents.isEmpty()) {
+                eventsTitle  = new ArrayList<>(eventsMap.keySet());
                 this.displayedEvents = eventsTitle;
             } else {
-                this.displayedEvents = new ArrayList<>();
+                eventsTitle = new ArrayList<>(eventsMap.keySet());
                 for (String element: eventsTitle) {
                     if (!this.student.registeredEvents.contains(element))
                         this.displayedEvents.add(element);
                 }
+                if (this.displayedEvents.isEmpty())
+                    displayedEvents.add("You have registered all events.");
             }
 
             adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, displayedEvents);

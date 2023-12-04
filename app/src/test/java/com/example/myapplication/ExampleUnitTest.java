@@ -8,8 +8,8 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.junit.Assert.*;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -75,6 +75,7 @@ public class ExampleUnitTest {
         verify(view, times(0)).redirectToAdminOperations(any());
     }
 
+    @Test
     public void testPresenter3(){
         // Test login as Student successfully
 

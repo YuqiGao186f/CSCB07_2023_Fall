@@ -33,12 +33,19 @@ public class StudentViewAnnouncementEvent extends AppCompatActivity {
         model = Model.getInstance();
         model.getAnnouncements((HashMap<String, PublicMessage> announcementsMap) -> {
 
-            String[] announcementArrayList = new String[announcementsMap.keySet().size()];
-            int index = 0;
-            for (Map.Entry<String, PublicMessage> entry : announcementsMap.entrySet()) {
-                String title = entry.getKey();
-                PublicMessage announcement = entry.getValue();
-                announcementArrayList[index++] =  "\n" + title + "\n" + announcement.content;
+            String[] announcementArrayList;
+            if(announcementsMap.keySet().size() == 0){
+                announcementArrayList = new String[1];
+                announcementArrayList[0] = "There isn't any announcement posted";
+            }
+            else{
+                announcementArrayList  = new String[announcementsMap.keySet().size()];
+                int index = 0;
+                for (Map.Entry<String, PublicMessage> entry : announcementsMap.entrySet()) {
+                    String title = entry.getKey();
+                    PublicMessage announcement = entry.getValue();
+                    announcementArrayList[index++] =  "\n" + title + "\n" + announcement.content;
+                }
             }
 
 
@@ -49,19 +56,25 @@ public class StudentViewAnnouncementEvent extends AppCompatActivity {
 
         });
 
-        studentSelectEventViewList = findViewById(R.id.studentSelectEventViewList);
+        studentSelectEventViewList = (ListView) findViewById(R.id.studentSelectEventViewList);
         model.getEvents((HashMap<String, Event> eventsMap) -> {
 
-            String[] eventsArrayList = new String[eventsMap.keySet().size()];
-            int index = 0;
-            for (Map.Entry<String, Event> entry : eventsMap.entrySet()) {
-                String title = entry.getKey();
-                Event event = entry.getValue();
-                eventsArrayList[index++] = "\n" + title + "\nDescription: " + event.content + "\nOccupancy: " +
-                        String.valueOf(event.occupancy) + "\nCurrently registered: " + String.valueOf(event.count);
+            String[] eventsArrayList;
+            if(eventsMap.keySet().size() == 0){
+                eventsArrayList = new String[1];
+                eventsArrayList[0] = "There isn't any event posted";
             }
+            else{
+                eventsArrayList = new String[eventsMap.keySet().size()];
+                int index = 0;
+                for (Map.Entry<String, Event> entry : eventsMap.entrySet()) {
+                    String title = entry.getKey();
+                    Event event = entry.getValue();
+                    eventsArrayList[index++] = "\n" + title + "\nDescription: " + event.content + "\nOccupancy: " +
+                            String.valueOf(event.occupancy) + "\nCurrently registered: " + String.valueOf(event.count);
+                }
 
-
+            }
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                     android.R.layout.simple_list_item_1, eventsArrayList);
             studentSelectEventViewList.setAdapter(adapter);

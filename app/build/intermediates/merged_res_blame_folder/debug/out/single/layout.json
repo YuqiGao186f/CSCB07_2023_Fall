@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/admin_view_event_detail.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/admin_view_event_detail.xml"
+    },
+    {
+        "merged": "com.example.myapplication.app-mergeDebugResources-38:/layout/admin_view_event_detail.xml",
+        "source": "com.example.myapplication.app-main-41:/layout/admin_view_event_detail.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/admin_view_complains.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/admin_view_complains.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/student_generate_complaint.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/student_generate_complaint.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/activity_student_operations.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/activity_student_operations.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/activity_student_comment_event.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/activity_student_comment_event.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/activity_admin_operations.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/activity_admin_operations.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/activity_register.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/activity_register.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/student_view_announcement_event.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/student_view_announcement_event.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/activity_student_check_qualification.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/activity_student_check_qualification.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/activity_student_check_qualification_questions.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/activity_student_check_qualification_questions.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/admin_generate_event.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/admin_generate_event.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/student_view_rsvp_events.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/student_view_rsvp_events.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/student_choose_comment_events.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/student_choose_comment_events.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/student_signup_rsvp_event.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/student_signup_rsvp_event.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/admin_generate_announcement.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/admin_generate_announcement.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/activity_main.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-mergeDebugResources-38:/layout/admin_view_events.xml",
+        "source": "/Users/whitefish/.gradle/daemon/8.0/com.example.myapplication.app-main-41:/layout/admin_view_events.xml"
+    }
+]

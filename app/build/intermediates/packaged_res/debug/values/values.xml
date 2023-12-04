@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="boolean_options">
+        <item>True</item>
+        <item>False</item>
+    </string-array>
+    <string-array name="major_or_specialist_options">
+        <item>CMS</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="program_options">
+        <item>Minor</item>
+        <item>Major/Specialist</item>
+    </string-array>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="appbar_padding">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <string name="_1_worst_to_10_best">1 (worst) to 10 (best)</string>
+    <string name="admin_operations">Admin Operations:</string>
+    <string name="all_events_list">All Events List</string>
+    <string name="announcement_content">Announcement Content:</string>
+    <string name="announcement_list">Announcement List</string>
+    <string name="announcement_title">Announcement Title:</string>
+    <string name="app_name">My Application</string>
+    <string name="back">Back</string>
+    <string name="back_to_login">Don\'t want register now?\nBack to Login</string>
+    <string name="capacity">Capacity</string>
+    <string name="check_if_you_are_qualified">Check if you are qualified:</string>
+    <string name="check_qualification">Check qualification</string>
+    <string name="check_your_qualification">Check your qualification</string>
+    <string name="click_on_the_event_you_want_to_evaluate">Click on the event you want to evaluate:</string>
+    <string name="comment">Comment:</string>
+    <string name="comment_rate_an_event">Comment/Rate an event</string>
+    <string name="comments_from_student">Comments from student:</string>
+    <string name="content">Content:</string>
+    <string name="email">Email:</string>
+    <string name="enter_event_content_here">Enter event content here.</string>
+    <string name="enter_event_title_here">Enter event title here.</string>
+    <string name="enter_your_email_to_login">Enter your email to login.</string>
+    <string name="enter_your_name_here">Enter your name here.</string>
+    <string name="event_content">Event Content:</string>
+    <string name="event_details">     Event Details</string>
+    <string name="event_name">Event Name:</string>
+    <string name="event_s_occupancy">Event\'s Occupancy:</string>
+    <string name="event_title">Event Title:</string>
+    <string name="false_option">False</string>
+    <string name="gcm_defaultSenderId" translatable="false">638701130926</string>
+    <string name="generate">Generate</string>
+    <string name="generate_a_complain">Generate a complain:</string>
+    <string name="generate_an_announcement">Generate an Announcement</string>
+    <string name="generate_an_event">Generate an Event</string>
+    <string name="google_api_key" translatable="false">AIzaSyAGppSNs5Z-VPReXgdYArvXoIPcgsC9IZY</string>
+    <string name="google_app_id" translatable="false">1:638701130926:android:3bb76bdbc58df85b5e493f</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAGppSNs5Z-VPReXgdYArvXoIPcgsC9IZY</string>
+    <string name="google_storage_bucket" translatable="false">cscb07-2023-fall.appspot.com</string>
+    <string name="i_m_an_admin">I\'m an admin</string>
+    <string name="leave_your_comment_and_rate_here">Leave your comment and/or rate here.</string>
+    <string name="log_out">Log Out</string>
+    <string name="login">Login</string>
+    <string name="name">Name:</string>
+    <string name="notice_you_can_only_comment_or_rate_or_both_once">Notice: you can only comment or rate or both ONCE.</string>
+    <string name="participant_limit">Participant limit:</string>
+    <string name="participants">Participants:</string>
+    <string name="password">Password:</string>
+    <string name="please_enter_password">Please enter Password.</string>
+    <string name="please_enter_your_comment_for_this_event">Please enter your comment for this event.</string>
+    <string name="please_enter_your_email">Please enter your email.</string>
+    <string name="post_an_announcement">Post An Announcement</string>
+    <string name="post_an_event">Post an Event</string>
+    <string name="post_complaint">Post Complaint</string>
+    <string name="project_id" translatable="false">cscb07-2023-fall</string>
+    <string name="question1">Question1</string>
+    <string name="question2">Question2</string>
+    <string name="question3">Question3</string>
+    <string name="rate">Rate:</string>
+    <string name="rate_average">Rate Average:</string>
+    <string name="rate_count">Rate Count:</string>
+    <string name="register">Register</string>
+    <string name="rsvp_for_an_event">RSVP for an event</string>
+    <string name="select_a_situation_below_that_suits_you_best">Select a situation below that suits you best</string>
+    <string name="select_an_event_to_view_details">Select an event to view details:</string>
+    <string name="select_an_event_you_want_to_rsvp">Select an event you want to RSVP</string>
+    <string name="send_comment">Send Comment</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="strForGoRegister">Don\'t have an account?\nClick here to register</string>
+    <string name="student_operations">Student Operations:</string>
+    <string name="students_complains">Students\' Complains</string>
+    <string name="title">Title:</string>
+    <string name="title_activity_student_post">StudentPOStActivity</string>
+    <string name="true_option">True</string>
+    <string name="view_announcement_and_event">View announcement and event</string>
+    <string name="view_complaints">View Complaints</string>
+    <string name="view_events">View Events</string>
+    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.MyApplication" parent="Base.Theme.MyApplication"/>
+    <style name="Theme.MyApplication.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="Theme.MyApplication.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.MyApplication.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+</resources>

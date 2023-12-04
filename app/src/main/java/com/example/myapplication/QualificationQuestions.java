@@ -26,8 +26,8 @@ public class QualificationQuestions {
             question3 = "Did you achieved at least an A- in both courses above at the first time that you complete those courses?";
         }
         else if(studentType.equals("For students who began at UTSC prior to 2021 applying for CS Major/Specialist")){
-            question1 = "Have you retake CSC/MATA67, CSCA48, MATA22, MATA37?";
-            question2 = "Have not you passed any one of the above courses?";
+            question1 = "Did you entered CMS prior to 2021?";
+            question2 = "Have you passed CSC/MATA67, CSCA48, MATA22 and MATA37?";
             question3 = "Did you gain descent grades in the courses above?";
         }
     }

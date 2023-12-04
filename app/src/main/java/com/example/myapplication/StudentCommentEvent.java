@@ -16,13 +16,16 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class StudentCommentEvent extends AppCompatActivity{
-
+    //a student can only comment a event once.
+    //can be done by: add a list<String> studentID in Event, and
+    //check the studentID of the event when student is commenting
     private Button btnStudentCommentEvent,btnStudentCommentEventBack;
-    private String studentID, studentName, selectedEventTitle;
+    private String studentID, selectedEventTitle;
     private TextView commentedEventNameShow;
     private EditText studentRateEvent,studentCommentEvent;
     private Model model;
     private Event selectedEvent;
+    private Student student;
 
 
     @Override
@@ -54,49 +57,62 @@ public class StudentCommentEvent extends AppCompatActivity{
                 String comment = studentCommentEvent.getText().toString();
                 String rateStr = studentRateEvent.getText().toString();
 
-                if(comment.isEmpty() && rateStr.isEmpty()){
-
-                    Toast.makeText(StudentCommentEvent.this,
-                            "Please rate the event or leave a comment", Toast.LENGTH_SHORT).show();
-
-                } else if (rateStr.isEmpty()) {
-
-                    Toast.makeText(StudentCommentEvent.this,
-                            "Notice:\nonly comment, not rate", Toast.LENGTH_SHORT).show();
-
-                    commentEvent(comment);
-                    updateEvent();
-
-                } else if (comment.isEmpty()) {  // only rate but not comment
-
-                    int rate = Integer.parseInt(rateStr);
-                    if (rate < 0 || rate > 10)
+                if(student.evaluatedEvents == null ||student.evaluatedEvents.isEmpty()||
+                        !student.evaluatedEvents.contains(selectedEvent.name)){
+                    if(comment.isEmpty() && rateStr.isEmpty()){
                         Toast.makeText(StudentCommentEvent.this,
-                                "Warning: Rate not between 1 to 10", Toast.LENGTH_SHORT).show();
-                    else {
-                        Toast.makeText(StudentCommentEvent.this,
-                                "Notice:\nonly rate, not comment", Toast.LENGTH_SHORT).show();
+                                "Please rate the event or leave a comment", Toast.LENGTH_SHORT).show();
 
-                        rateEvent(rate);
-                        updateEvent();
-                    }
+                    } else if (rateStr.isEmpty()) {// only comment but not rate
 
-                }
-                else{  // rate & comment
-
-                    int rate = Integer.parseInt(rateStr);
-
-                    if (rate < 0 || rate > 10)
-                        Toast.makeText(StudentCommentEvent.this,
-                                "Warning: Rate not between 1 to 10", Toast.LENGTH_SHORT).show();
-                    else {
                         commentEvent(comment);
-                        rateEvent(rate);
-
+                        if(student.evaluatedEvents == null||student.evaluatedEvents.isEmpty()){
+                            student.evaluatedEvents = new ArrayList<>();
+                        }
+                        student.evaluatedEvents.add(selectedEvent.name);
                         updateEvent();
-                    }
 
+                    } else if (comment.isEmpty()) {  // only rate but not comment
+
+                        int rate = Integer.parseInt(rateStr);
+                        if (rate < 0 || rate > 10)
+                            Toast.makeText(StudentCommentEvent.this,
+                                    "Please rate from 1 to 10", Toast.LENGTH_SHORT).show();
+                        else {
+
+                            rateEvent(rate);
+                            if(student.evaluatedEvents == null||student.evaluatedEvents.isEmpty()){//update student
+                                student.evaluatedEvents = new ArrayList<>();
+                            }
+                            student.evaluatedEvents.add(selectedEvent.name);
+                            updateEvent();
+                        }
+
+                    }
+                    else{  // rate & comment
+
+                        int rate = Integer.parseInt(rateStr);
+
+                        if (rate < 0 || rate > 10)
+                            Toast.makeText(StudentCommentEvent.this,
+                                    "Please rate from 1 to 10", Toast.LENGTH_SHORT).show();
+                        else {
+                            commentEvent(comment);
+                            rateEvent(rate);
+                            if(student.evaluatedEvents == null||student.evaluatedEvents.isEmpty()){
+                                student.evaluatedEvents = new ArrayList<>();
+                            }
+                            student.evaluatedEvents.add(selectedEvent.name);
+                            updateEvent();
+                        }
+
+                    }
                 }
+                else{
+                    Toast.makeText(StudentCommentEvent.this,
+                            "You have already evaluated this event", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
@@ -119,7 +135,7 @@ public class StudentCommentEvent extends AppCompatActivity{
 
     private void getStudentInfo() {
         model.getStudent(studentID, (Student student) -> {
-            this.studentName = student.name;
+            this.student = student;
         });
     }
 
@@ -129,15 +145,19 @@ public class StudentCommentEvent extends AppCompatActivity{
     }
 
     public void commentEvent(String comment){
-        if (selectedEvent.comments == null)
+        if (selectedEvent.comments == null||selectedEvent.comments.isEmpty())
             selectedEvent.comments = new ArrayList<>();
-        selectedEvent.comments.add("Student " + this.studentName + ": " + comment);
+        selectedEvent.comments.add("Student " + this.student.name + ": " + comment);
+
     }
 
     public void updateEvent(){
+        model.saveStudent(studentID,student, (Boolean succeed) ->{});
+
+
         model.saveEvent(selectedEvent, (Boolean succeed) -> {
             Toast.makeText(StudentCommentEvent.this,
-                    succeed ? "Comment or rate generated" : "Fail to comment or rate the event\nPlease try again.",
+                    succeed ? "Comment/rate generated" : "Fail to comment or rate the event\nPlease try again.",
                     Toast.LENGTH_LONG).show();
             if (succeed) {
                 Intent intent = new Intent(StudentCommentEvent.this, StudentChooseCommentEvents.class);

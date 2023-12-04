@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <!--The manifest function handles the activities' jump. It determines the starting page and
+    each valid paged to jump to/from in the app-->
 
     <application
         android:allowBackup="true"

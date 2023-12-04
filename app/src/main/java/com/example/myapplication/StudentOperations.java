@@ -3,15 +3,23 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class StudentOperations extends AppCompatActivity implements View.OnClickListener{
 
     private Button btnViewAnnouncementEvent, btnViewRSVPEvent, btnGenerateComplaint, btnCommentRateEvent, btnCheckQualification, btnStudentLogOut;
 
     private String studentID;
+    private Model model;
+    private Student student;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +27,10 @@ public class StudentOperations extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_student_operations);
 
         studentID = getIntent().getStringExtra("userID");
+        model = Model.getInstance();
+
+
+        getStudentInfo();
 
 
         btnViewAnnouncementEvent = (Button) findViewById(R.id.btnViewAnnouncementEvent);
@@ -41,6 +53,11 @@ public class StudentOperations extends AppCompatActivity implements View.OnClick
 
     }
 
+    private void getStudentInfo() {
+        model.getStudent(studentID, (Student student) -> {
+            this.student = student;
+        });
+    }
 
     @Override
     public void onClick(View view) {
@@ -56,7 +73,6 @@ public class StudentOperations extends AppCompatActivity implements View.OnClick
 
         } else if (id == R.id.btnViewAnnouncementEvent) {
 
-            //TODO
             Intent intent = new Intent(StudentOperations.this, StudentViewAnnouncementEvent.class);
             intent.putExtra("studentID", studentID);
             startActivity(intent);
@@ -74,10 +90,15 @@ public class StudentOperations extends AppCompatActivity implements View.OnClick
             startActivity(intent);
 
         } else if (id == R.id.btnCommentRateEvent) {
-
-            Intent intent = new Intent(StudentOperations.this, StudentChooseCommentEvents.class);
-            intent.putExtra("studentID", studentID);
-            startActivity(intent);
+            if(!student.registeredEvents.isEmpty()){
+                Intent intent = new Intent(StudentOperations.this, StudentChooseCommentEvents.class);
+                intent.putExtra("studentID", studentID);
+                startActivity(intent);
+            }
+            else{
+                Toast.makeText(StudentOperations.this,
+                        "You have not registered for any events\nPlease go to RSVP for an event", Toast.LENGTH_LONG).show();
+            }
 
         }
 

@@ -20,6 +20,12 @@ import java.util.HashMap;
 import java.util.function.Consumer;
 
 public class Model {
+    /* This model handles realtime database from the
+    * firebase in link:
+    * https://console.firebase.google.com/project/cscb07-2023-fall/database/cscb07-2023-fall-default-rtdb/data?hl=zh-cn
+    *
+    * */
+
 
     private static Model instance;
 
